@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">METAR/TAF</string>
+    <string name="mystations">Mes Stations</string>
+    <string name="dewpointestatic">Point de rosee</string>
+    <string name="pressurestatic">Pression</string>
+    <string name="cloudsstatic">Nuages</string>
+    <string name="visibilitystatic">Visibilite</string>
+    <string name="windstatic">Vent</string>
+    <string name="today">Taf pour aujourd hui</string>
+    <string name="airportname">Nom de l\'airport</string>
+    <string name="localisation">Localisaiton</string>
+    <string name="decoded">Decode</string>
+    <string name="raw">Brut</string>
+    <string name="textvisibilty">Visibilite</string>
+    <string name="textsearch">Chercher par le code ICAO ou IATA</string>
+    <string name="icao">oaci</string>
+    <string name="iata">iata</string>
+    <string name="latitude">latitude</string>
+    <string name="longitude">longitude</string>
+    <string name="map">Map</string>
+    <string name="hintsearch">ICAO code</string>
+    <string name="metarstatic">METAR</string>
+    <string name="tafstatic">TAF</string>
+    <string name="stationstatic">Station</string>
+    <string name="temperaturestatic">Temperature</string>
+    <string name="first_fragment_label">first_fragment_label</string>
+    <string name="second_fragment_label">second_fragment_label</string>
+    <string name="typeText">Tapez le code içi</string>
+    <string name="firstprevision">Prevision de 7:00 à 11:00</string>
+    <string name="secondprevision">Prevision de 11:00 à 15:00</string>
+    <string name="thirdprevision">Prevision de 15:00 à 19:00</string>
+    <string name="nochange">Pas de changement</string>
+</resources>

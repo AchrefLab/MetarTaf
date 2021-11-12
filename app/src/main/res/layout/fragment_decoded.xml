@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DecodedFragment"
+    android:background="@color/cardview_dark_background"
+    >
+<FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/cardview_dark_background">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+        <TextView
+            android:id="@+id/metarStatic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:text="@string/metarstatic"/>
+        <TextView
+            android:id="@+id/flightrule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/white"
+            android:background="@color/green"
+            android:textSize="15sp"
+            android:textStyle="bold">
+        </TextView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/metarStatic"
+            android:layout_marginTop="3dp"
+            android:background="@color/toolbar"/>
+        <RelativeLayout
+            android:id="@+id/secondlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/metarStatic"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp">
+            //Temperature
+            <TextView
+                android:id="@+id/temperaturestatic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="@string/temperaturestatic"/>
+            <TextView
+                android:id="@+id/tempMetar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@+id/temperaturestatic"
+                android:layout_marginLeft="60dp"/>
+
+            <!-- Dew Point-->
+            <TextView
+                android:layout_below="@+id/tempMetar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="@string/dewpointestatic"
+                android:paddingTop="5dp"/>
+            <TextView
+                android:id="@+id/dewpointMetar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tempMetar"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@+id/temperaturestatic"
+                android:layout_marginLeft="60dp"
+                android:paddingTop="5dp"/>
+
+            <!-- Pressure-->
+            <TextView
+                android:layout_below="@+id/dewpointMetar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="@string/pressurestatic"
+                android:paddingTop="5dp"/>
+            <TextView
+                android:id="@+id/pressureMetar"
+                android:layout_below="@+id/dewpointMetar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@+id/temperaturestatic"
+                android:layout_marginLeft="60dp"
+                android:paddingTop="5dp"/>
+
+            <!-- clouds-->
+            <TextView
+                android:layout_below="@+id/pressureMetar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="@string/cloudsstatic"
+                android:paddingTop="5dp"/>
+            <TextView
+                android:id="@+id/cloudsMetar"
+                android:layout_below="@+id/pressureMetar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@+id/temperaturestatic"
+                android:layout_marginLeft="60dp"
+                android:paddingTop="5dp"/>
+
+            <!-- Metar-->
+            <TextView
+                android:layout_below="@+id/cloudsMetar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="@string/windstatic"
+                android:paddingTop="5dp"/>
+            <TextView
+                android:id="@+id/windMetar"
+                android:layout_below="@+id/cloudsMetar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@+id/temperaturestatic"
+                android:layout_marginLeft="60dp"
+                android:paddingTop="5dp"/>
+
+            <!-- visibility METAR-->
+            <TextView
+                android:layout_below="@+id/windMetar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="@string/visibilitystatic"
+                android:paddingTop="5dp"/>
+            <TextView
+                android:id="@+id/visibilityMetar"
+                android:layout_below="@+id/windMetar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@+id/temperaturestatic"
+                android:layout_marginLeft="60dp"
+                android:paddingTop="5dp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tafstatic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/secondlayout"
+            android:textColor="@color/white"
+            android:layout_marginTop="15dp"
+            android:textSize="15sp"
+            android:text="@string/tafstatic"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tafstatic"
+            android:layout_marginTop="3dp"
+            android:background="@color/toolbar"/>
+        <RelativeLayout
+            android:id="@+id/thirdlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tafstatic"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp">
+            <TextView
+                android:id="@+id/today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/firstprevision"
+                android:textColor="@color/white"/>
+
+            <!-- clouds Taf-->
+            <TextView
+                android:layout_below="@+id/today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp"
+                android:textStyle="bold"
+                android:text="@string/cloudsstatic"
+                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/cloudsTaf"
+                android:layout_below="@+id/today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/today"
+                android:layout_marginLeft="60dp"
+                android:textColor="@color/white"/>
+
+            <!-- visibility Taf-->
+            <TextView
+                android:layout_below="@+id/cloudsTaf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp"
+                android:textStyle="bold"
+                android:text="@string/visibilitystatic"
+                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/visbilityTaf"
+                android:layout_below="@+id/cloudsTaf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/today"
+                android:layout_marginLeft="60dp"
+                android:textColor="@color/white"/>
+
+            <!-- Winds Taf-->
+            <TextView
+                android:layout_below="@+id/visbilityTaf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp"
+                android:textStyle="bold"
+                android:text="@string/windstatic"
+                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/windTaf"
+                android:layout_below="@+id/visbilityTaf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/today"
+                android:layout_marginLeft="60dp"
+                android:textColor="@color/white"/>
+            <!-- SECOND PREVISION -->
+
+            <TextView
+                android:id="@+id/secondTaf"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/windTaf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/secondprevision"
+                android:textColor="@color/white"/>
+
+            <!-- clouds Taf 1-->
+            <TextView
+                android:layout_below="@+id/secondTaf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp"
+                android:textStyle="bold"
+                android:text="@string/cloudsstatic"
+                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/cloudsTaf2"
+                android:layout_below="@+id/secondTaf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/today"
+                android:layout_marginLeft="60dp"
+                android:textColor="@color/white"/>
+
+            <!-- visibility Taf-->
+            <TextView
+                android:layout_below="@+id/cloudsTaf2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp"
+                android:textStyle="bold"
+                android:text="@string/visibilitystatic"
+                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/visbilityTaf2"
+                android:layout_below="@+id/cloudsTaf2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/today"
+                android:layout_marginLeft="60dp"
+                android:textColor="@color/white"/>
+
+            <!-- Winds Taf-->
+            <TextView
+                android:layout_below="@+id/visbilityTaf2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp"
+                android:textStyle="bold"
+                android:text="@string/windstatic"
+                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/windTaf2"
+                android:layout_below="@+id/visbilityTaf2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/today"
+                android:layout_marginLeft="60dp"
+                android:textColor="@color/white"/>
+
+            <!-- THIRD PREVISION -->
+
+            <TextView
+                android:id="@+id/thirdTaf"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/windTaf2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/thirdprevision"
+                android:textColor="@color/white"/>
+
+            <!-- clouds Taf -->
+            <TextView
+                android:layout_below="@+id/thirdTaf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp"
+                android:textStyle="bold"
+                android:text="@string/cloudsstatic"
+                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/cloudsTaf3"
+                android:layout_below="@+id/thirdTaf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/today"
+                android:layout_marginLeft="60dp"
+                android:textColor="@color/white"/>
+
+            <!-- visibility Taf-->
+            <TextView
+                android:layout_below="@+id/cloudsTaf3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp"
+                android:textStyle="bold"
+                android:text="@string/visibilitystatic"
+                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/visbilityTaf3"
+                android:layout_below="@+id/cloudsTaf3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/today"
+                android:layout_marginLeft="60dp"
+                android:textColor="@color/white"/>
+
+            <!-- Winds Taf-->
+            <TextView
+                android:layout_below="@+id/visbilityTaf3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp"
+                android:textStyle="bold"
+                android:text="@string/windstatic"
+                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/windTaf3"
+                android:layout_below="@+id/visbilityTaf3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/today"
+                android:layout_marginLeft="60dp"
+                android:textColor="@color/white"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/stationstatic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/thirdlayout"
+            android:textColor="@color/white"
+            android:layout_marginTop="15dp"
+            android:textSize="15sp"
+            android:text="@string/stationstatic"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/stationstatic"
+            android:layout_marginTop="3dp"
+            android:background="@color/toolbar"/>
+
+        <RelativeLayout
+            android:id="@+id/fourthlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/stationstatic"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp">
+            <TextView
+                android:id="@+id/nameairport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="@string/airportname"/>
+            <TextView
+                android:id="@+id/namestation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@+id/nameairport"
+                android:layout_marginLeft="60dp"/>
+
+            <!-- CITY COUNTRY-->
+            <TextView
+                android:layout_below="@+id/namestation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:paddingTop="5dp"
+                android:textStyle="bold"
+                android:text="@string/localisation"/>
+            <TextView
+                android:id="@+id/citystation"
+                android:paddingTop="5dp"
+                android:layout_below="@+id/namestation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@+id/nameairport"
+                android:layout_marginLeft="60dp"/>
+
+            <!-- icao-->
+            <TextView
+                android:layout_below="@+id/citystation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:paddingTop="5dp"
+                android:textStyle="bold"
+                android:text="@string/icao"/>
+            <TextView
+                android:id="@+id/icaostation"
+                android:paddingTop="5dp"
+                android:layout_below="@+id/citystation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@+id/nameairport"
+                android:layout_marginLeft="60dp"/>
+
+            <!-- iata-->
+            <TextView
+                android:layout_below="@+id/icaostation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:paddingTop="5dp"
+                android:textStyle="bold"
+                android:text="@string/iata"/>
+            <TextView
+                android:id="@+id/iatastation"
+                android:paddingTop="5dp"
+                android:layout_below="@+id/icaostation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@+id/nameairport"
+                android:layout_marginLeft="60dp"/>
+
+            <!-- longitude-->
+            <TextView
+                android:layout_below="@+id/iatastation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:paddingTop="5dp"
+                android:textStyle="bold"
+                android:text="@string/longitude"/>
+            <TextView
+                android:id="@+id/longitude"
+                android:paddingTop="5dp"
+                android:layout_below="@+id/iatastation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@+id/nameairport"
+                android:layout_marginLeft="60dp"/>
+
+            <!-- latitude-->
+            <TextView
+                android:layout_below="@+id/longitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:paddingTop="5dp"
+                android:textStyle="bold"
+                android:text="@string/latitude"/>
+            <TextView
+                android:id="@+id/latitude"
+                android:paddingTop="5dp"
+                android:layout_below="@+id/longitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@+id/nameairport"
+                android:layout_marginLeft="60dp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</FrameLayout></ScrollView>
